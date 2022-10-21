@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-const url='mongodb+srv://electronic-shop:bzkarimsostene@cluster0.tvlir.mongodb.net/assignment?retryWrites=true&w=majority'
+dotenv.config()
+
+const url=process.env.MONGODB_URL;
 const connectDb = async() =>{
     try {
         await mongoose.connect(url,{   useNewUrlParser: true,useUnifiedTopology: true});
